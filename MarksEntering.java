@@ -144,6 +144,7 @@ public class MarksEntering {
                                     System.out.printf("|SE-%03d%8s|%-10.2f|%-14s|\n",sub2Number,"",marks2,status2);
                                     System.out.printf("|SE-%03d%8s|%-10.2f|%-14s|\n",sub3Number,"",marks3,status3);
                                     System.out.printf("+%40s+\n", "-".repeat(40));
+                                    
                                 }
                             }
                         }
