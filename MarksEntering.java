@@ -133,10 +133,10 @@ public class MarksEntering {
                                     }
                                     
                                     System.out.printf("+%40s+\n", "-".repeat(40));
-                                    System.out.printf("|Name   : %s%-30s%s|\n", COLOR_BLUE, name, RESET);
+                                    System.out.printf("|Name   :%s%-31s%s|\n", COLOR_BLUE, name, RESET);
                                     System.out.printf("|Age    : %-31s|\n", age + " Years old");
-                                    System.out.printf("|Status : %-42s|\n", status);
-                                    System.out.printf("|Total  : %-15.2fAvg  :%-10.2f|\n",total,avg);
+                                    System.out.printf("|Status :%-43s|\n", status);
+                                    System.out.printf("|Total  : %-15.2fAvg  : %-9.2f|\n",total,avg);
                                     System.out.printf("+%40s+\n", "-".repeat(40));
                                     System.out.printf("|%-14s|%-10s|%-14s|\n","Subject","Marks","Status");
                                     System.out.printf("+%40s+\n", "-".repeat(40));
