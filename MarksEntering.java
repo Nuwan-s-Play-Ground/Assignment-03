@@ -36,7 +36,7 @@ public class MarksEntering {
                     subject1 = subject1.strip();
                     String subject1Number = subject1.substring(3);
                     int sub1Number = Integer.parseInt(subject1Number);
-                    System.out.print("Enter your Marks1: ");
+                    System.out.print("Enter your Marks 1: ");
                     double marks1 = scanner.nextDouble();
                     scanner.nextLine();
                     String status1;
@@ -52,35 +52,44 @@ public class MarksEntering {
                     System.out.print("Enter your Subject2: ");
                     String subject2 = scanner.nextLine();
                     if (!((subject2.startsWith("SE-")| subject2.startsWith("se-")) & subject2.strip().length()>3)) {
-                        System.out.printf("%sInvalid Subject Input%s \n", COLOR_RED, RESET);
+                        System.out.printf("%sInvalid Subject.%s \n", COLOR_RED, RESET);
                         System.exit(0);
                     } else {
                         subject2 = subject2.strip();
                         String subject2Number = subject2.substring(3);
                         int sub2Number = Integer.parseInt(subject2Number);
-                        System.out.print("Enter your Marks2: ");
-                        double marks2 = scanner.nextDouble();
-                        scanner.nextLine();
-                        String status2;
-                        if (marks2 >= 75) {
-                            status2 = COLOR_YELLOW + "Distint Pass " + "\033[0m";
-                        } else if (marks2>=65){
-                            status2 = COLOR_GREEN + "Credit Pass  " + RESET;
-                        }else if (marks2 >= 55) {
-                            status2 = COLOR_BLUE + "Pass         " + RESET;
+                        if (sub2Number==sub1Number){
+                            System.out.printf("%sInvalid Subject. You have already entered this subject.%s \n", COLOR_RED, RESET);
+                            System.exit(0);
                         } else {
-                            status2 = COLOR_RED + " Fail         " + RESET;
+                            System.out.print("Enter your Marks 2: ");
+                            double marks2 = scanner.nextDouble();
+                            scanner.nextLine();
+                            String status2;
+                            if (marks2 >= 75) {
+                                status2 = COLOR_YELLOW + "Distint Pass " + "\033[0m";
+                            } else if (marks2>=65){
+                                status2 = COLOR_GREEN + "Credit Pass  " + RESET;
+                            }else if (marks2 >= 55) {
+                                status2 = COLOR_BLUE + "Pass         " + RESET;
+                            } else {
+                                status2 = COLOR_RED + " Fail         " + RESET;
                         }
                         System.out.print("Enter your Subject3: ");
                         String subject3 = scanner.nextLine();
                         if (!((subject3.startsWith("SE-")| subject3.startsWith("se-")) & subject3.strip().length()>3)) {
-                            System.out.printf("%sInvalid Subject Input%s \n", COLOR_RED, RESET);
+                            System.out.printf("%sInvalid Subject.%s \n", COLOR_RED, RESET);
                             System.exit(0);
                         } else {
                             subject3 = subject3.strip();
                             String subject3Number = subject3.substring(3);
                             int sub3Number = Integer.parseInt(subject3Number);
-                            System.out.print("Enter your Marks3: ");
+                            if (sub3Number==sub1Number || sub3Number==sub2Number){
+                            System.out.printf("%sInvalid Subject. You have already entered this subject.%s \n", COLOR_RED, RESET);
+                            System.exit(0);
+                            } else {
+                            System.out.print("Enter your Marks 3: ");
+
                             double marks3 = scanner.nextDouble();
                             scanner.nextLine();
                             String status3;
@@ -119,10 +128,11 @@ public class MarksEntering {
                             System.out.printf("+%40s+\n", "-".repeat(40));
                         }
                     }
+                    }
                 }
             }
         }
-
+    }
         System.exit(0);
     }
 }
